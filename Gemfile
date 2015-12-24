@@ -46,3 +46,6 @@ group :development, :test do
   gem 'pry-doc'
 end
 
+
+gem 'active_hash'
+
