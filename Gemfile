@@ -38,3 +38,11 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'therubyracer',  platforms: :ruby
+gem 'rb-readline'
+
+group :development, :test do
+  gem 'pry-rails'
+  gem 'pry-doc'
+end
+
