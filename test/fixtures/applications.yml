@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  version: MyString
+  application_type_id: 
+  remark: MyString
+
+two:
+  version: MyString
+  application_type_id: 
+  remark: MyString
