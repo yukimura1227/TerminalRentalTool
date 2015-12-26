@@ -1,29 +1,40 @@
-<h1>Listing applications</h1>
-
-<table>
+<%- model_class = Application -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Version</th>
-      <th>Application type</th>
-      <th>Remark</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:version) %></th>
+      <th><%= model_class.human_attribute_name(:application_type_id) %></th>
+      <th><%= model_class.human_attribute_name(:remark) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @applications.each do |application| %>
       <tr>
+        <td><%= link_to application.id, application_path(application) %></td>
         <td><%= application.version %></td>
-        <td><%= application.application_type %></td>
+        <td><%= application.application_type_id %></td>
         <td><%= application.remark %></td>
-        <td><%= link_to 'Show', application %></td>
-        <td><%= link_to 'Edit', edit_application_path(application) %></td>
-        <td><%= link_to 'Destroy', application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l application.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_application_path(application), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      application_path(application),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Application', new_application_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_application_path,
+            :class => 'btn btn-primary' %>
