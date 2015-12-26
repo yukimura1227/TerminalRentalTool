@@ -46,6 +46,8 @@ group :development, :test do
   gem 'pry-doc'
 end
 
-
 gem 'active_hash'
+
+gem 'less-rails' # Railsでlessを使えるようにする。Bootstrapがlessで書かれているため
+gem 'twitter-bootstrap-rails' # Bootstrapの本体
 

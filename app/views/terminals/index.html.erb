@@ -1,31 +1,42 @@
-<h1>Listing terminals</h1>
-
-<table>
+<%- model_class = Terminal -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Imei</th>
-      <th>Rental status</th>
-      <th>Remark</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:imei) %></th>
+      <th><%= model_class.human_attribute_name(:rental_status_id) %></th>
+      <th><%= model_class.human_attribute_name(:remark) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @terminals.each do |terminal| %>
       <tr>
+        <td><%= link_to terminal.id, terminal_path(terminal) %></td>
         <td><%= terminal.name %></td>
         <td><%= terminal.imei %></td>
         <td><%= terminal.rental_status_id %></td>
         <td><%= terminal.remark %></td>
-        <td><%= link_to 'Show', terminal %></td>
-        <td><%= link_to 'Edit', edit_terminal_path(terminal) %></td>
-        <td><%= link_to 'Destroy', terminal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l terminal.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_terminal_path(terminal), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      terminal_path(terminal),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Terminal', new_terminal_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_terminal_path,
+            :class => 'btn btn-primary' %>
