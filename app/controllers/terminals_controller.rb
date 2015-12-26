@@ -69,6 +69,6 @@ class TerminalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def terminal_params
-      params.require(:terminal).permit(:name, :imei, :rental_status_id, :remark)
+      params.require(:terminal).permit(:name, :imei, :os_version, :rental_status_id, :remark)
     end
 end
