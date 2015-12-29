@@ -7,7 +7,7 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:version) %></th>
-      <th><%= model_class.human_attribute_name(:application_type_id) %></th>
+      <th><%= model_class.human_attribute_name(:application_type) %></th>
       <th><%= model_class.human_attribute_name(:remark) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -18,7 +18,7 @@
       <tr>
         <td><%= link_to application.id, application_path(application) %></td>
         <td><%= application.version %></td>
-        <td><%= application.application_type_id %></td>
+        <td><%= application.application_type_id ? application.application_type.name : nil %></td>
         <td><%= application.remark %></td>
         <td><%=l application.created_at %></td>
         <td>
