@@ -1,19 +1,23 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Sim -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Phone number:</strong>
-  <%= @sim.phone_number %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:phone_number) %>:</strong></dt>
+  <dd><%= @sim.phone_number %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:rental_status_id) %>:</strong></dt>
+  <dd><%= @sim.rental_status_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:remark) %>:</strong></dt>
+  <dd><%= @sim.remark %></dd>
+</dl>
 
-<p>
-  <strong>Rental status:</strong>
-  <%= @sim.rental_status_id %>
-</p>
-
-<p>
-  <strong>Remark:</strong>
-  <%= @sim.remark %>
-</p>
-
-<%= link_to 'Edit', edit_sim_path(@sim) %> |
-<%= link_to 'Back', sims_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              sims_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_sim_path(@sim), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              sim_path(@sim),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
