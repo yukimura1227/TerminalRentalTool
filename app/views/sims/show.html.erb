@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @sim.phone_number %>
+</p>
+
+<p>
+  <strong>Rental status:</strong>
+  <%= @sim.rental_status_id %>
+</p>
+
+<p>
+  <strong>Remark:</strong>
+  <%= @sim.remark %>
+</p>
+
+<%= link_to 'Edit', edit_sim_path(@sim) %> |
+<%= link_to 'Back', sims_path %>
