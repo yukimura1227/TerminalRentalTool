@@ -18,7 +18,7 @@
       <tr>
         <td><%= link_to sim.id, sim_path(sim) %></td>
         <td><%= sim.phone_number %></td>
-        <td><%= sim.rental_status_id %></td>
+        <td><%= sim.rental_status_id ? sim.rental_status.name : nil %></td>
         <td><%= sim.remark %></td>
         <td><%=l sim.created_at %></td>
         <td>
