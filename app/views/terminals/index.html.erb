@@ -10,6 +10,7 @@
       <th><%= model_class.human_attribute_name(:imei) %></th>
       <th><%= model_class.human_attribute_name(:os_version) %></th>
       <th><%= model_class.human_attribute_name(:rental_status_id) %></th>
+      <th><%= model_class.human_attribute_name(:phone_number) %></th>
       <th><%= model_class.human_attribute_name(:remark) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -23,6 +24,7 @@
         <td><%= terminal.imei %></td>
         <td><%= terminal.os_version %></td>
         <td><%= terminal.rental_status_id ? terminal.rental_status.name : nil %></td>
+        <td><%= terminal.sim ? terminal.sim.phone_number : nil %></td>
         <td><%= terminal.remark %></td>
         <td><%=l terminal.created_at %></td>
         <td>
