@@ -8,6 +8,8 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:phone_number) %></th>
       <th><%= model_class.human_attribute_name(:rental_status_id) %></th>
+      <th><%= model_class.human_attribute_name(:terminal_imei) %></th>
+      <th><%= model_class.human_attribute_name(:terminal_name) %></th>
       <th><%= model_class.human_attribute_name(:remark) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -19,6 +21,8 @@
         <td><%= link_to sim.id, sim_path(sim) %></td>
         <td><%= sim.phone_number %></td>
         <td><%= sim.rental_status_id ? sim.rental_status.name : nil %></td>
+        <td><%= sim.terminal_id ? sim.terminal.imei : nil %></td>
+        <td><%= sim.terminal_id ? sim.terminal.name : nil %></td>
         <td><%= sim.remark %></td>
         <td><%=l sim.created_at %></td>
         <td>
