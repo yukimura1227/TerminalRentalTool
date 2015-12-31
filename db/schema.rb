@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151229134024) do
+ActiveRecord::Schema.define(version: 20151231060247) do
 
   create_table "application_types", force: true do |t|
     t.string   "name"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20151229134024) do
     t.string   "remark"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "terminal_id"
   end
 
   create_table "terminals", force: true do |t|
