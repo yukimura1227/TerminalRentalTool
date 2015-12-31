@@ -69,6 +69,6 @@ class SimsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sim_params
-      params.require(:sim).permit(:phone_number, :rental_status_id, :remark)
+      params.require(:sim).permit(:phone_number, :rental_status_id, :terminal_id, :remark)
     end
 end
