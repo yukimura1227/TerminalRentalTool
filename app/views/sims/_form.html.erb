@@ -29,13 +29,13 @@
     </div>
     <%= error_span(@sim[:rental_status_id]) %>
   </div>
-    <div class="control-group">
-      <%= f.label :terminal_id, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.collection_select :terminal_id, Terminal.all, :id, :name, :include_blank => true %>
-      </div>
-      <%= error_span(@sim[:terminal_id]) %>
+  <div class="control-group">
+    <%= f.label :terminal_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :terminal_id, Terminal.all, :id, :name, :include_blank => true %>
     </div>
+    <%= error_span(@sim[:terminal_id]) %>
+  </div>
   <div class="control-group">
     <%= f.label :remark, :class => 'control-label' %>
     <div class="controls">
