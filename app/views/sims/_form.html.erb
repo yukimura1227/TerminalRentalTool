@@ -25,7 +25,7 @@
   <div class="control-group">
     <%= f.label :rental_status_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :rental_status_id, :class => 'form-control' %>
+      <%= f.collection_select :rental_status_id, RentalStatus.all, :id, :name, :include_blank => false, :selected => @sim.rental_status_id %>
     </div>
     <%= error_span(@sim[:rental_status_id]) %>
   </div>
