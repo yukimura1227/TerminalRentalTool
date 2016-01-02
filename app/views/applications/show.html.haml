@@ -1,23 +1,28 @@
-<%- model_class = Application -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
-</div>
-
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:version) %>:</strong></dt>
-  <dd><%= @application.version %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:application_type) %>:</strong></dt>
-  <dd><%= @application.application_type.name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:remark) %>:</strong></dt>
-  <dd><%= @application.remark %></dd>
-</dl>
-
-<%= link_to t('.back', :default => t("helpers.links.back")),
-              applications_path, :class => 'btn btn-default'  %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_application_path(@application), :class => 'btn btn-default' %>
-<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              application_path(@application),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+- model_class = Application
+.page-header
+  %h1= t '.title', :default => model_class.model_name.human.titleize
+%dl.dl-horizontal
+  %dt
+    %strong
+      = model_class.human_attribute_name(:version)
+      \:
+  %dd= @application.version
+  %dt
+    %strong
+      = model_class.human_attribute_name(:application_type)
+      \:
+  %dd= @application.application_type.name
+  %dt
+    %strong
+      = model_class.human_attribute_name(:remark)
+      \:
+  %dd= @application.remark
+= link_to t('.back', :default => t("helpers.links.back")), |
+  applications_path, :class => 'btn btn-default'
+= link_to t('.edit', :default => t("helpers.links.edit")),         |
+  edit_application_path(@application), :class => 'btn btn-default'
+= link_to t('.destroy', :default => t("helpers.links.destroy")),                                               |
+  application_path(@application),                                                                              |
+  :method => 'delete',                                                                                         |
+  :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, |
+  :class => 'btn btn-danger'
