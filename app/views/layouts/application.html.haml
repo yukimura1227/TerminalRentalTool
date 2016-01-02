@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title TerminalRentalTool
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .navbar.navbar-inverse
+      .container
+        .navbar-header
+          %a.navbar-brand 端末レンタル管理
+        %ul.nav.navbar-nav
+          %li
+            %a{:href => "/terminals"} 端末管理
+          %li
+            %a{:href => "/applications"} アプリの管理
+          %li
+            %a{:href => "/application_types"} アプリ種類の管理
+          %li
+            %a{:href => "/sims"} simの管理
+    = yield
