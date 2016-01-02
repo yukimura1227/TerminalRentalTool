@@ -1,0 +1,24 @@
+= form_for @application_type, :html => { :class => "form-horizontal application_type" } do |f|
+  - if @application_type.errors.any?
+    #error_expl.panel.panel-danger
+      .panel-heading
+        %h3.panel-title
+          = pluralize(@application_type.errors.count, "error")
+          prohibited this application_type from being saved:
+      .panel-body
+        %ul
+          - @application_type.errors.full_messages.each do |msg|
+            %li= msg
+  .control-group
+    = f.label :name, :class => 'control-label'
+    .controls
+      = f.text_field :name, :class => 'form-control'
+    = error_span(@application_type[:name])
+  .control-group
+    = f.label :remark, :class => 'control-label'
+    .controls
+      = f.text_field :remark, :class => 'form-control'
+    = error_span(@application_type[:remark])
+  = f.submit nil, :class => 'btn btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), |
+    application_types_path, :class => 'btn btn-default'          |
