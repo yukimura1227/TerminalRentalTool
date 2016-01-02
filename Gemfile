@@ -51,3 +51,5 @@ gem 'active_hash'
 gem 'less-rails' # Railsでlessを使えるようにする。Bootstrapがlessで書かれているため
 gem 'twitter-bootstrap-rails' # Bootstrapの本体
 
+gem 'haml-rails'
+gem 'erb2haml'
