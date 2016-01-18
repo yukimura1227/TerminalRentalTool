@@ -35,5 +35,7 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-  BetterErrors::Middleware.allow_ip! "192.168.55.1"
+# 例えばVagrantなどの仮想マシン上で開発する場合、ホスト側からブラウザでアクセスしても
+# better_errorsの画面が描画されないため、そのような場合は下記のように許可IPを指定する
+#  BetterErrors::Middleware.allow_ip! "192.168.55.1"
 end
