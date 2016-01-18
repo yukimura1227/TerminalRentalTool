@@ -44,6 +44,8 @@ gem 'rb-readline'
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-doc'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 gem 'active_hash'
