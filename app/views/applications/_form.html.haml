@@ -17,7 +17,7 @@
   .control-group
     = f.label :application_type_id, :class => 'control-label'
     .controls
-      = f.collection_select :application_type_id, ApplicationType.all, :id, :name, :include_blank => false, :selected => @application.application_type.id
+      = f.collection_select :application_type_id, ApplicationType.all, :id, :name, :include_blank => false, :selected => @application.application_type != nil ? @application.application_type.id : nil
     = error_span(@application[:application_type_id])
   .control-group
     = f.label :remark, :class => 'control-label'
