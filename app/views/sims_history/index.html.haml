@@ -1,0 +1,23 @@
+- model_class = Sim
+.page-header
+  %h2= "History-"+ (t '.title', :default => model_class.model_name.human.pluralize.titleize)
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:phone_number)
+      %th= model_class.human_attribute_name(:rental_status_id)
+      %th= model_class.human_attribute_name(:terminal_imei)
+      %th= model_class.human_attribute_name(:terminal_name)
+      %th= model_class.human_attribute_name(:remark)
+      %th= model_class.human_attribute_name(:created_at)
+  %tbody
+    - @sims_historys.map(&:reify).each do |sim|
+      %tr
+        %td= link_to sim.id, sim_path(sim)
+        %td= sim.phone_number
+        %td= sim.rental_status_id ? sim.rental_status.name : nil
+        %td= sim.terminal_id ? sim.terminal.imei : nil
+        %td= sim.terminal_id ? sim.terminal.name : nil
+        %td= sim.remark
+        %td= l sim.created_at
