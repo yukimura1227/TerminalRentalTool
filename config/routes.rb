@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :sims
+  resources :sims do
+    resources :historys, :only => [:index], :controller => :sims_history
+  end
 
   resources :applications, :except => [:edit]
 

@@ -1,0 +1,2 @@
+module SimsHistoryHelper
+end
