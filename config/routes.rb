@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :sims
 
-  resources :applications
+  resources :applications, :except => [:edit]
 
   resources :application_types
 
