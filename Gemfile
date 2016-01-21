@@ -46,6 +46,7 @@ group :development, :test do
   gem 'pry-doc'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'awesome_print'
 end
 
 gem 'active_hash'
