@@ -19,8 +19,6 @@
   %dd= @application.remark
 = link_to t('.back', :default => t("helpers.links.back")), |
   applications_path, :class => 'btn btn-default'
-= link_to t('.edit', :default => t("helpers.links.edit")),         |
-  edit_application_path(@application), :class => 'btn btn-default'
 = link_to t('.destroy', :default => t("helpers.links.destroy")),                                               |
   application_path(@application),                                                                              |
   :method => 'delete',                                                                                         |

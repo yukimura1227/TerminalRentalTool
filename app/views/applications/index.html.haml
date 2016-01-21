@@ -19,8 +19,6 @@
         %td= application.remark
         %td= l application.created_at
         %td
-          = link_to t('.edit', :default => t("helpers.links.edit")),               |
-            edit_application_path(application), :class => 'btn btn-default btn-xs'
           = link_to t('.destroy', :default => t("helpers.links.destroy")),                                               |
             application_path(application),                                                                               |
             :method => :delete,                                                                                          |
