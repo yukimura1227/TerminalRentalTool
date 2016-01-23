@@ -12,6 +12,7 @@
       %th= model_class.human_attribute_name(:rental_status_id)
       %th= model_class.human_attribute_name(:phone_number)
       %th= model_class.human_attribute_name(:remark)
+      %th= model_class.human_attribute_name(:created_at)
       %th= model_class.human_attribute_name(:updated_at)
   %tbody
     - @terminal_historys.map(&:reify).each do |terminal|
@@ -23,4 +24,5 @@
         %td= terminal.rental_status_id ? terminal.rental_status.name : nil
         %td= terminal.sim ? terminal.sim.phone_number : nil
         %td= terminal.remark
+        %td= l terminal.created_at
         %td= l terminal.updated_at
