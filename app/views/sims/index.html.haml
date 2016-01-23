@@ -30,7 +30,7 @@
             :method => :delete,                                                                                          |
             :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, |
             :class => 'btn btn-xs btn-danger'
-          = link_to 'history', sim_historys_path(sim)
+          = link_to 'history', sim_historys_path(sim), :class => 'btn btn-default btn-xs'
 = link_to t('.new', :default => t("helpers.links.new")), |
   new_sim_path,                                          |
   :class => 'btn btn-primary'                            |
