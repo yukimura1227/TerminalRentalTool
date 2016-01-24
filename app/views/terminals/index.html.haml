@@ -25,14 +25,19 @@
         %td= terminal.remark
         %td= l terminal.updated_at
         %td
-          = link_to t('.edit', :default => t("helpers.links.edit")),         |
-            edit_terminal_path(terminal), :class => 'btn btn-default btn-xs'
-          = link_to t('.destroy', :default => t("helpers.links.destroy")),                                               |
-            terminal_path(terminal),                                                                                     |
-            :method => :delete,                                                                                          |
-            :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, |
+          = link_to t('.edit', :default => t("helpers.links.edit")),
+            edit_terminal_path(terminal),
+            :class => 'btn btn-default btn-xs'
+
+          = link_to t('.destroy', :default => t("helpers.links.destroy")),
+            terminal_path(terminal),
+            :method => :delete,
+            :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
             :class => 'btn btn-xs btn-danger'
-          = link_to 'history', terminal_historys_path(terminal), :class => 'btn btn-default btn-xs'
-= link_to t('.new', :default => t("helpers.links.new")), |
-  new_terminal_path,                                     |
+
+          = link_to 'history', terminal_historys_path(terminal),
+            :class => 'btn btn-default btn-xs'
+
+= link_to t('.new', :default => t("helpers.links.new")),
+  new_terminal_path,
   :class => 'btn btn-primary'
