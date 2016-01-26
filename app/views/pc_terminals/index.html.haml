@@ -30,6 +30,9 @@
             :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
             :class => 'btn btn-xs btn-danger'
 
+          = link_to 'history', pc_terminal_historys_path(pc_terminal),
+            :class => 'btn btn-default btn-xs'
+
 = link_to t('.new', :default => t("helpers.links.new")),
    new_pc_terminal_path,
    :class => 'btn btn-primary'
