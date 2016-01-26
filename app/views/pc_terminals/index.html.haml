@@ -17,7 +17,7 @@
         %td= link_to pc_terminal.id, pc_terminal_path(pc_terminal)
         %td= pc_terminal.name
         %td= pc_terminal.manage_id
-        %td= pc_terminal.rental_status_id
+        %td= pc_terminal.rental_status_id ? pc_terminal.rental_status.name : nil
         %td= pc_terminal.remark
         %td=l pc_terminal.created_at
         %td

@@ -13,7 +13,7 @@
 %p
   %strong= model_class.human_attribute_name(:rental_status_id) + ':'
   %br
-  = @pc_terminal.rental_status_id
+  = @pc_terminal.rental_status_id ? @pc_terminal.rental_status.name : nil
 %p
   %strong= model_class.human_attribute_name(:remark) + ':'
   %br
