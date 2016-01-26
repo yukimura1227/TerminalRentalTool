@@ -1,22 +1,23 @@
-= form_for @pc_terminal do |f|
-  - if @pc_terminal.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@pc_terminal.errors.count, "error")} prohibited this pc_terminal from being saved:"
-      %ul
-        - @pc_terminal.errors.full_messages.each do |msg|
-          %li= msg
-
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :manage_id
-    = f.text_field :manage_id
-  .field
-    = f.label :rental_status_id
-    = f.number_field :rental_status_id
-  .field
-    = f.label :remark
-    = f.text_field :remark
-  .actions
-    = f.submit 'Save'
+= form_for @pc_terminal, html: { class: "form form-horizontal pc_terminal" } do |f|
+  .form-group
+    = f.label :name, class: 'control-label'
+    .controls
+      = f.text_field :name, class: 'form-control', required: true
+    = error_span(@pc_terminal[:name])
+  .form-group
+    = f.label :manage_id, class: 'control-label'
+    .controls
+      = f.text_field :manage_id, class: 'form-control', required: true
+    = error_span(@pc_terminal[:manage_id])
+  .form-group
+    = f.label :rental_status_id, class: 'control-label'
+    .controls
+      = f.text_field :rental_status_id, class: 'form-control', required: true
+    = error_span(@pc_terminal[:rental_status_id])
+  .form-group
+    = f.label :remark, class: 'control-label'
+    .controls
+      = f.text_field :remark, class: 'form-control', required: true
+    = error_span(@pc_terminal[:remark])
+  = f.submit nil,class: 'btn btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), pc_terminals_path, :class => 'btn btn-default'

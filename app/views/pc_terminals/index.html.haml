@@ -1,27 +1,27 @@
-%h1 Listing pc_terminals
-
-%table
+- model_class = PcTerminal
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+%table.table.table-striped
   %thead
     %tr
-      %th Name
-      %th Manage
-      %th Rental status
-      %th Remark
-      %th
-      %th
-      %th
-
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:name)
+      %th= model_class.human_attribute_name(:manage_id)
+      %th= model_class.human_attribute_name(:rental_status_id)
+      %th= model_class.human_attribute_name(:remark)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
   %tbody
     - @pc_terminals.each do |pc_terminal|
       %tr
+        %td= link_to pc_terminal.id, pc_terminal_path(pc_terminal)
         %td= pc_terminal.name
         %td= pc_terminal.manage_id
         %td= pc_terminal.rental_status_id
         %td= pc_terminal.remark
-        %td= link_to 'Show', pc_terminal
-        %td= link_to 'Edit', edit_pc_terminal_path(pc_terminal)
-        %td= link_to 'Destroy', pc_terminal, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td=l pc_terminal.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_pc_terminal_path(pc_terminal), :class => 'btn btn-default btn-xs'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), pc_terminal_path(pc_terminal), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
 
-%br
-
-= link_to 'New Pc terminal', new_pc_terminal_path
+= link_to t('.new', :default => t("helpers.links.new")), new_pc_terminal_path, :class => 'btn btn-primary'
