@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :pc_terminals
+
   resources :sims do
     resources :historys, :only => [:index], :controller => :sims_history
   end

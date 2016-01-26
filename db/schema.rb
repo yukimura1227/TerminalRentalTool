@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160109143947) do
+ActiveRecord::Schema.define(version: 20160126105618) do
 
   create_table "application_types", force: true do |t|
     t.string   "name"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 20160109143947) do
   end
 
   add_index "applications", ["application_type_id"], name: "index_applications_on_application_type_id"
+
+  create_table "pc_terminals", force: true do |t|
+    t.string   "name"
+    t.string   "manage_id"
+    t.integer  "rental_status_id"
+    t.string   "remark"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "sims", force: true do |t|
     t.string   "phone_number"
