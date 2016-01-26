@@ -1,0 +1,24 @@
+- model_class = PcTerminal
+.page-header
+  %h2= 'History'
+  %h2=t '.title', :default => model_class.model_name.human.pluralize.titleize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:name)
+      %th= model_class.human_attribute_name(:manage_id)
+      %th= model_class.human_attribute_name(:rental_status_id)
+      %th= model_class.human_attribute_name(:remark)
+      %th= model_class.human_attribute_name(:created_at)
+      %th= model_class.human_attribute_name(:updated_at)
+  %tbody
+    - @pc_terminal_historys.map(&:reify).each do |pc_terminal|
+      %tr
+        %td= pc_terminal.id
+        %td= pc_terminal.name
+        %td= pc_terminal.manage_id
+        %td= pc_terminal.rental_status_id ? pc_terminal.rental_status.name : nil
+        %td= pc_terminal.remark
+        %td=l pc_terminal.created_at
+        %td=l pc_terminal.updated_at
