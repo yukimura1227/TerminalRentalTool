@@ -21,7 +21,15 @@
         %td= pc_terminal.remark
         %td=l pc_terminal.created_at
         %td
-          = link_to t('.edit', :default => t("helpers.links.edit")), edit_pc_terminal_path(pc_terminal), :class => 'btn btn-default btn-xs'
-          = link_to t('.destroy', :default => t("helpers.links.destroy")), pc_terminal_path(pc_terminal), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
+          = link_to t('.edit', :default => t("helpers.links.edit")),
+            edit_pc_terminal_path(pc_terminal), :class => 'btn btn-default btn-xs'
 
-= link_to t('.new', :default => t("helpers.links.new")), new_pc_terminal_path, :class => 'btn btn-primary'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")),
+            pc_terminal_path(pc_terminal),
+            :method => :delete,
+            :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+            :class => 'btn btn-xs btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")),
+   new_pc_terminal_path,
+   :class => 'btn btn-primary'
