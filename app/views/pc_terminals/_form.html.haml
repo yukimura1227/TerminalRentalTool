@@ -1,0 +1,22 @@
+= form_for @pc_terminal do |f|
+  - if @pc_terminal.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@pc_terminal.errors.count, "error")} prohibited this pc_terminal from being saved:"
+      %ul
+        - @pc_terminal.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :manage_id
+    = f.text_field :manage_id
+  .field
+    = f.label :rental_status_id
+    = f.number_field :rental_status_id
+  .field
+    = f.label :remark
+    = f.text_field :remark
+  .actions
+    = f.submit 'Save'

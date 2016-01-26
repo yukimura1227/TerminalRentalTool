@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @pc_terminal.name
+%p
+  %b Manage:
+  = @pc_terminal.manage_id
+%p
+  %b Rental status:
+  = @pc_terminal.rental_status_id
+%p
+  %b Remark:
+  = @pc_terminal.remark
+
+= link_to 'Edit', edit_pc_terminal_path(@pc_terminal)
+\|
+= link_to 'Back', pc_terminals_path

@@ -1,0 +1,27 @@
+%h1 Listing pc_terminals
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Manage
+      %th Rental status
+      %th Remark
+      %th
+      %th
+      %th
+
+  %tbody
+    - @pc_terminals.each do |pc_terminal|
+      %tr
+        %td= pc_terminal.name
+        %td= pc_terminal.manage_id
+        %td= pc_terminal.rental_status_id
+        %td= pc_terminal.remark
+        %td= link_to 'Show', pc_terminal
+        %td= link_to 'Edit', edit_pc_terminal_path(pc_terminal)
+        %td= link_to 'Destroy', pc_terminal, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Pc terminal', new_pc_terminal_path
