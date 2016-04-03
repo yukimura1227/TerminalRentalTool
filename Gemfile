@@ -57,3 +57,4 @@ gem 'twitter-bootstrap-rails' # Bootstrapの本体
 gem 'haml-rails'
 gem 'erb2haml'
 gem 'paper_trail'
+gem 'sorcery'
