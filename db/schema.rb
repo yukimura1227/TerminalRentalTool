@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20160126105618) do
     t.datetime "updated_at"
   end
 
-  add_index "applications", ["application_type_id"], name: "index_applications_on_application_type_id"
+  add_index "applications", ["application_type_id"], name: "index_applications_on_application_type_id", using: :btree
 
   create_table "pc_terminals", force: true do |t|
     t.string   "name"
@@ -64,10 +64,10 @@ ActiveRecord::Schema.define(version: 20160126105618) do
     t.integer  "item_id",                       null: false
     t.string   "event",                         null: false
     t.string   "whodunnit"
-    t.text     "object",     limit: 1073741823
+    t.text     "object",     limit: 2147483647
     t.datetime "created_at"
   end
 
-  add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
+  add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id", using: :btree
 
 end
