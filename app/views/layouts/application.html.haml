@@ -13,13 +13,13 @@
           %a.navbar-brand 端末レンタル管理
         %ul.nav.navbar-nav
           %li
-            %a{href: '/terminals'}         端末管理
+            %a{href: '/terminals',         class: "#{request.path_info.to_s =~ %r(^/terminals.*)         ? 'active-page' : ''}"}         端末管理
           %li
-            %a{href: '/applications'}      アプリの管理
+            %a{href: '/applications',      class: "#{request.path_info.to_s =~ %r(^/applications.*)      ? 'active-page' : ''}"}      アプリの管理
           %li
-            %a{href: '/application_types'} アプリ種類の管理
+            %a{href: '/application_types', class: "#{request.path_info.to_s =~ %r(^/application_types.*) ? 'active-page' : ''}"} アプリ種類の管理
           %li
-            %a{href: '/sims'}              simの管理
+            %a{href: '/sims',              class: "#{request.path_info.to_s =~ %r(^/sims.*)              ? 'active-page' : ''}"}              simの管理
           %li
-            %a{href: '/pc_terminals'}      PC端末の管理
+            %a{href: '/pc_terminals',      class: "#{request.path_info.to_s =~ %r(^/pc_terminals.*)      ? 'active-page' : ''}"}      PC端末の管理
     = yield
