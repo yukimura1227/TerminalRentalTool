@@ -34,6 +34,8 @@
 
           = link_to 'history', sim_historys_path(sim), :class => 'btn btn-default btn-xs'
 
+= paginate @sims
+
 = link_to t('.new', :default => t("helpers.links.new")),
   new_sim_path,
   :class => 'btn btn-primary'
