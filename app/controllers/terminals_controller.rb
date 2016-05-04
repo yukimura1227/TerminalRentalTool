@@ -4,7 +4,7 @@ class TerminalsController < ApplicationController
   # GET /terminals
   # GET /terminals.json
   def index
-    @terminals = Terminal.all
+    @terminals = Terminal.page(params[:page])
   end
 
   # GET /terminals/1

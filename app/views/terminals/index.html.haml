@@ -38,6 +38,8 @@
           = link_to 'history', terminal_historys_path(terminal),
             class: 'btn btn-default btn-xs'
 
+= paginate @terminals
+
 = link_to t('.new', default: t("helpers.links.new")),
   new_terminal_path,
   class: 'btn btn-primary'
