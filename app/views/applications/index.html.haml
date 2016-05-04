@@ -25,6 +25,8 @@
             :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
             :class => 'btn btn-xs btn-danger'
 
+= paginate @applications
+
 = link_to t('.new', :default => t("helpers.links.new")),
   new_application_path,
   :class => 'btn btn-primary'

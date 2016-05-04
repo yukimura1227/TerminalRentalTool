@@ -4,7 +4,7 @@ class ApplicationTypesController < ApplicationController
   # GET /application_types
   # GET /application_types.json
   def index
-    @application_types = ApplicationType.all
+    @application_types = ApplicationType.page(params[:page])
   end
 
   # GET /application_types/1

@@ -4,7 +4,7 @@ class SimsController < ApplicationController
   # GET /sims
   # GET /sims.json
   def index
-    @sims = Sim.all
+    @sims = Sim.page(params[:page])
   end
 
   # GET /sims/1

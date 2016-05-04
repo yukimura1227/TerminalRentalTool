@@ -4,7 +4,7 @@ class PcTerminalsController < ApplicationController
   # GET /pc_terminals
   # GET /pc_terminals.json
   def index
-    @pc_terminals = PcTerminal.all
+    @pc_terminals = PcTerminal.page(params[:page])
   end
 
   # GET /pc_terminals/1
