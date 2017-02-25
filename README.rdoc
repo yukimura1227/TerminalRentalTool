@@ -12,6 +12,11 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
+````
+create database terminal_db
+create user terminal_user@'localhost' identified by 'XXXXXX';
+grant all on terminal_db.* to 'terminal_user'@'localhost';
+````
 
 * Database initialization
 
