@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: "terminals#index"
   resources :pc_terminals
 
   resources :sims do
