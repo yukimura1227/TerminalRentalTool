@@ -15,12 +15,13 @@
       %th= t '.actions', :default => t("helpers.actions")
   %tbody
     - @terminals.each do |terminal|
+      - terminal = terminal.decorate
       %tr
         %td= link_to terminal.id, terminal_path(terminal)
         %td= terminal.name
         %td= terminal.imei
         %td= terminal.os_version
-        %td= terminal.rental_status_id ? terminal.rental_status.name : nil
+        %td= terminal.status_badge
         %td= terminal.sim ? terminal.sim.phone_number : nil
         %td= terminal.remark
         %td= l terminal.updated_at
